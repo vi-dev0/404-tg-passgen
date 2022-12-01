@@ -44,12 +44,28 @@ def start_message(message):
     bot.send_message(message.chat.id, "Hi👋, I can create many random passwords for you\n\n"
                                     "🟢 *Random Password* \- creates 10 random passwords\n"
                                     "🟢 *PIN* \- creates random PINs certain length\n"
-                                    "🔴 *Memorable Password* \- create random password from the dictionary of words", parse_mode="MarkdownV2",
-                                    reply_markup=keyboard())
+                                    "🔴 *Memorable Password* \- create random password from the dictionary of words\n\n"
+                                    "*POWERED BY: @B4DCAT404*", parse_mode="MarkdownV2", reply_markup=keyboard())
 
 @bot.message_handler(commands=["help"])
 def info_message(message):
-    bot.send_message(message.chat.id, "This bot developed for fun by @vi_dev0")
+    bot.send_message(message.chat.id, "*How bot[ ](https://github.com/b4dcat404/b4dcat404/raw/main/images/header.png)"
+                                      "generate passwords?*\n\n"
+                                      "For generate __random__ passwords, bot uses library [Random Password Generator]"
+                                      "(https://pypi.org/project/random-password-generator/)\n"
+                                      "For generate __PINs__, bot uses random module from Python\n"
+                                      "For generate __memorable__ passwords, bot used "
+                                      "dictionary of words\n", parse_mode="MarkdownV2")
+    bot.send_message(message.chat.id, "*How to use bot?*\n\n"
+                                      "Click on __Any Password type__ to generate random passwords\n\n"
+                                      "__Random password__ \- contain upper/lower digits,"
+                                      "numbers and special chars\n"
+                                      "__PIN__ \- contain only numbers\n"
+                                      "__Memorable password__ \- contain word from dictionary", parse_mode="MarkdownV2")
+    bot.send_message(message.chat.id, "*Powered by\:*\n\n"
+                                      "@B4DCAT404 \- 🇷🇺 telegram chanel for developers, students and freelancers\n\n"
+                                      "View source code on [GitHub](https://github.com/vi-dev0/404-tg-passgen), "
+                                      "feel free to contribute\n", parse_mode="MarkdownV2")
 @bot.message_handler(func=lambda message:True)
 def all_messages(message):
     if message.text == "Random password":
@@ -66,7 +82,25 @@ def all_messages(message):
                     '8\.\ `' + pg.generate() + '`\n' +
                     '9\.\ `' + pg.generate() + '`', parse_mode="MarkdownV2")
     elif message.text == "❗ Help/Info":
-        bot.send_message(message.from_user.id,"This bot developed for fun by @vi_dev0")
+        bot.send_message(message.chat.id,
+                         "*How bot[ ](https://github.com/b4dcat404/b4dcat404/raw/main/images/header.png)"
+                         "generate passwords?*\n\n"
+                         "For generate __random__ passwords, bot uses library [Random Password Generator]"
+                         "(https://pypi.org/project/random-password-generator/)\n"
+                         "For generate __PINs__, bot uses random module from Python\n"
+                         "For generate __memorable__ passwords, bot used "
+                         "dictionary of words\n", parse_mode="MarkdownV2")
+        bot.send_message(message.chat.id, "*How to use bot?*\n\n"
+                                          "Click on __Any Password type__ to generate random passwords\n\n"
+                                          "__Random password__ \- contain upper/lower digits,"
+                                          "numbers and special chars\n"
+                                          "__PIN__ \- contain only numbers\n"
+                                          "__Memorable password__ \- contain word from dictionary",
+                         parse_mode="MarkdownV2")
+        bot.send_message(message.chat.id, "*Powered by\:*\n\n"
+                                          "@B4DCAT404 \- 🇷🇺 telegram chanel for developers, students and freelancers\n\n"
+                                          "View source code on [GitHub](https://github.com/vi-dev0/404-tg-passgen), "
+                                          "feel free to contribute\n", parse_mode="MarkdownV2")
     elif message.text == "PIN":
         bot.send_message(message.from_user.id,"Chose PIN length",reply_markup=keyboard("PIN"))
     elif message.text == "Memorable password":
