@@ -21,9 +21,8 @@ pins = ["4 digit\nPIN","5 digit\nPIN","6 digit\nPIN","7 digit\nPIN","8 digit\nPI
 def keyboard(key_type="Normal"):
     markup = ReplyKeyboardMarkup(True, row_width=10)
     if key_type == "Normal":
-        row = KeyboardButton("Random password"), KeyboardButton("PIN"), KeyboardButton("Memorable password")
+        row = KeyboardButton("Random password"), KeyboardButton("PIN"), KeyboardButton("Memorable password"),KeyboardButton("❗ Help/Info")
         markup.add(*row)
-        markup.add(KeyboardButton("Generator settings"),KeyboardButton("❗ Help/Info"))
     elif key_type == "PIN":
         row = [KeyboardButton(x) for x in pins]
         markup.add(*row)
@@ -67,7 +66,7 @@ def all_messages(message):
     elif message.text == "❗ Help/Info":
         bot.send_message(message.from_user.id,"This bot developed for fun by @vi_dev0")
     elif message.text == "PIN":
-        bot.send_message(message.from_user.id,"Normal Keyboard",reply_markup=keyboard("PIN"))
+        bot.send_message(message.from_user.id,"Chose PIN length",reply_markup=keyboard("PIN"))
     elif message.text == "Memorable password":
         bot.send_message(message.from_user.id,"This feature is not ready yet",reply_markup=keyboard("Normal"))
     elif message.text == "🔙Delete":
