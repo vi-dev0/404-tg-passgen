@@ -66,7 +66,7 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -114,29 +114,24 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+You need 2 packages
+* [PyTelegramBotApi](https://pypi.org/project/pyTelegramBotAPI/)
   ```sh
-  npm install npm@latest -g
+  pip install pyTelegramBotAPI
+  ```
+* [Random password Generator](https://pypi.org/project/random-password-generator/)
+  ```sh
+  pip install random-password-generator
   ```
 
-### Installation
+### How it works
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+For random password generation used library [Random password Generator](https://pypi.org/project/random-password-generator/).
+The password is generated using uppercase, lowercase letters, numbers and special characters.
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+For PINs generation used *random* module from Python.
+
+For Memorable passwords used [dictionary](#)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,9 +140,13 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+To generate random password tap **Random password**
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+To generate PINs tap **PIN**, chose number of digits and tap on it.
+
+To generate memorable password tap **Memorable password**
+
+All passwords can be copied, just click on any password or PIN and they will be copied
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,13 +157,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [x] Add Changelog
 - [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Create bot by [BotFather](https://t.me/BotFather)
+- [x] Found library for password generation
+- [x] Add types of passwords
+    - [x] Random password
+    - [x] PINs
+    - [ ] Memorable password
+- [ ] Commit and push on GitHub
+- [ ] Publish in [B4DCAT404](https://t.me/b4dcat404) chanel
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/vi-dev0/404-tg-passgen/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -200,9 +202,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Vi - [@vi_dev0](https://twitter.com/vi_dev0)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/vi-dev0/404-tg-passgen](https://github.com/vi-dev0/404-tg-passgen)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
