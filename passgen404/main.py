@@ -6,6 +6,7 @@ from password_generator import PasswordGenerator
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 import config
 from random import choice
+import time
 
 # *** PARAMS ***
 pg = PasswordGenerator()
@@ -41,7 +42,8 @@ def keyboard(key_type="Normal"):
 
 @bot.message_handler(commands=["start"])
 def start_message(message):
-    bot.send_message(message.chat.id, "Hi👋, I can create many random passwords for you\n\n"
+    bot.send_message(message.chat.id, "Hi👋,[ ](https://github.com/b4dcat404/b4dcat404/raw/main/images/header.png)"
+                                    "I can create many random passwords for you\n\n"
                                     "🟢 *Random Password* \- creates 10 random passwords\n"
                                     "🟢 *PIN* \- creates random PINs certain length\n"
                                     "🔴 *Memorable Password* \- create random password from the dictionary of words\n\n"
@@ -49,13 +51,6 @@ def start_message(message):
 
 @bot.message_handler(commands=["help"])
 def info_message(message):
-    bot.send_message(message.chat.id, "*How bot[ ](https://github.com/b4dcat404/b4dcat404/raw/main/images/header.png)"
-                                      "generate passwords?*\n\n"
-                                      "For generate __random__ passwords, bot uses library [Random Password Generator]"
-                                      "(https://pypi.org/project/random-password-generator/)\n"
-                                      "For generate __PINs__, bot uses random module from Python\n"
-                                      "For generate __memorable__ passwords, bot used "
-                                      "dictionary of words\n", parse_mode="MarkdownV2")
     bot.send_message(message.chat.id, "*How to use bot?*\n\n"
                                       "Click on __Any Password type__ to generate random passwords\n\n"
                                       "__Random password__ \- contain upper/lower digits,"
@@ -82,14 +77,6 @@ def all_messages(message):
                     '8\.\ `' + pg.generate() + '`\n' +
                     '9\.\ `' + pg.generate() + '`', parse_mode="MarkdownV2")
     elif message.text == "❗ Help/Info":
-        bot.send_message(message.chat.id,
-                         "*How bot[ ](https://github.com/b4dcat404/b4dcat404/raw/main/images/header.png)"
-                         "generate passwords?*\n\n"
-                         "For generate __random__ passwords, bot uses library [Random Password Generator]"
-                         "(https://pypi.org/project/random-password-generator/)\n"
-                         "For generate __PINs__, bot uses random module from Python\n"
-                         "For generate __memorable__ passwords, bot used "
-                         "dictionary of words\n", parse_mode="MarkdownV2")
         bot.send_message(message.chat.id, "*How to use bot?*\n\n"
                                           "Click on __Any Password type__ to generate random passwords\n\n"
                                           "__Random password__ \- contain upper/lower digits,"
@@ -145,6 +132,13 @@ def all_messages(message):
             pin += choice(numbers)
         bot.send_message(message.from_user.id, "`" + pin + "`", parse_mode="MarkdownV2")
     else:
-        bot.send_message(message.chat.id,message.text)
+        bot.send_message(message.chat.id,"I understand only command on keyboard")
 
-bot.polling(none_stop=True, interval=0)
+if __name__ == '__main__':
+    while True:
+        try:
+            bot.polling(none_stop=True, interval=0)
+        except Exception as e:
+            print(e)
+            time.sleep(5)
+            continue

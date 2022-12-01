@@ -87,6 +87,8 @@
 
 This is a simple password generator in Telegram.
 
+Bot can generate random passwords (upper/lowercase chars, numbers, special chars), PINs, memorable passwords.
+
 The project was created for the telegram channel - [B4DCAT404](https://t.me/b4dcat404) and to complement the portfolio. The project uses public libraries and generally accepted practices
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -108,7 +110,6 @@ The project was created for the telegram channel - [B4DCAT404](https://t.me/b4dc
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
