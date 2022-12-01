@@ -49,7 +49,7 @@ def start_message(message):
                                     "I can create many random passwords for you\n\n"
                                     "🟢 *Random Password* \- creates 10 random passwords\n"
                                     "🟢 *PIN* \- creates random PINs certain length\n"
-                                    "🔴 *Memorable Password* \- create random password from the dictionary of words\n\n"
+                                    "🟢 *Memorable Password* \- create random password from the dictionary of words\n\n"
                                     "*POWERED BY: @B4DCAT404*", parse_mode="MarkdownV2", reply_markup=keyboard())
 
 @bot.message_handler(commands=["help"])
