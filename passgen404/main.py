@@ -41,8 +41,10 @@ def keyboard(key_type="Normal"):
 
 @bot.message_handler(commands=["start"])
 def start_message(message):
-    bot.send_message(message.chat.id, "Hi👋, I can create many random passwords for you\n"
-                                    "Click on *Generate* to create 10 random passwords\n", parse_mode="MarkdownV2",
+    bot.send_message(message.chat.id, "Hi👋, I can create many random passwords for you\n\n"
+                                    "🟢 *Random Password* \- creates 10 random passwords\n"
+                                    "🟢 *PIN* \- creates random PINs certain length\n"
+                                    "🔴 *Memorable Password* \- create random password from the dictionary of words", parse_mode="MarkdownV2",
                                     reply_markup=keyboard())
 
 @bot.message_handler(commands=["help"])
