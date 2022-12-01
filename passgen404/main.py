@@ -1,12 +1,15 @@
 # Telegram Bot Password Generator
 #
 # *** IMPORTS ***
+import random
+
 import telebot
 from password_generator import PasswordGenerator
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 import config
 from random import choice
 import time
+import json
 
 # *** PARAMS ***
 pg = PasswordGenerator()
@@ -91,9 +94,15 @@ def all_messages(message):
     elif message.text == "PIN":
         bot.send_message(message.from_user.id,"Chose PIN length",reply_markup=keyboard("PIN"))
     elif message.text == "Memorable password":
-        bot.send_message(message.from_user.id,"This feature is not ready yet",reply_markup=keyboard("Normal"))
+        with open('words.json') as w:
+            words = json.load(w)
+            x = random.randint(0, 21114)
+            z = random.randint(0, 21114)
+            c = random.randint(0, 21114)
+            bot.send_message(message.chat.id, '`' + words['wordlist'][x] + '-' + words['wordlist'][z] + '-' +
+                             words['wordlist'][c] + '`', parse_mode="MarkdownV2")
     elif message.text == "🔙Delete":
-        bot.delete_message(message.from_user.id,message.message_id)
+        pass
     elif message.text == "Menu":
         bot.send_message(message.chat.id, "Back to menu", reply_markup=keyboard("Normal"))
     elif message.text == "4 digit\nPIN":
