@@ -160,11 +160,11 @@ All passwords can be copied, just click on any password or PIN and they will be 
 - [x] Create bot by [BotFather](https://t.me/BotFather)
 - [x] Found library for password generation
 - [x] Add types of passwords
-    - [x] Random password
+    - [] Random password
     - [x] PINs
-    - [ ] Memorable password
-- [ ] Commit and push on GitHub
-- [ ] Publish in [B4DCAT404](https://t.me/b4dcat404) chanel
+    - [x] Memorable password
+- [x] Commit and push on GitHub
+- [x] Publish in [B4DCAT404](https://t.me/b4dcat404) chanel
 
 See the [open issues](https://github.com/vi-dev0/404-tg-passgen/issues) for a full list of proposed features (and known issues).
 
