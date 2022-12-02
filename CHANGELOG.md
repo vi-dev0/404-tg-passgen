@@ -15,6 +15,7 @@
 - Added ❗ Help/Info button with hel info and source code
 - Added memorable password generation
 - Added wordlist for memorable password generation
+- Added acknowledgments
 
 ### Removed 
 - Nothing
